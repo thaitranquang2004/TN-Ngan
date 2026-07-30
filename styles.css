@@ -303,7 +303,11 @@ img { display: block; max-width: 100%; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  /* 1. Thay đổi vị trí X và Y của ảnh */
+  object-position: 50% 100%; 
+  
+  /* 2. Thêm độ zoom (phóng to) cho ảnh */
+  transform: scale(1.0);
 }
 .hero-photo-card::after {
   content: '';
@@ -541,6 +545,35 @@ img { display: block; max-width: 100%; }
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
   padding: 0 20px;
+}
+
+/* Contact */
+.invite-contact {
+  margin-bottom: 32px;
+}
+.contact-label {
+  margin: 0 0 8px;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  color: #888;
+}
+.contact-number {
+  margin: 0 0 6px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.contact-number a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+.contact-number a:hover {
+  text-decoration: underline;
+  color: var(--wine);
 }
 
 /* Venue */
