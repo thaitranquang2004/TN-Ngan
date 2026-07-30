@@ -480,6 +480,7 @@ img { display: block; max-width: 100%; }
 .invite-name .name-script {
   font-size: clamp(40px, 9vw, 56px);
   color: var(--ink);
+  font-family: 'Libertinus Math', 'Great Vibes', cursive;
 }
 
 .invite-divider {
@@ -512,7 +513,7 @@ img { display: block; max-width: 100%; }
 .invite-time {
   margin: 0 0 16px;
   font-family: var(--font-serif);
-  font-size: 16px;
+  font-size: 23px;
   font-weight: 400;
   letter-spacing: 0.08em;
   color: #555;
@@ -568,6 +569,20 @@ img { display: block; max-width: 100%; }
   font-family: var(--font-serif);
   font-size: 14px;
   color: #777;
+}
+
+/* Map Container */
+.map-wrapper {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.map-wrapper iframe {
+  display: block;
 }
 
 /* Map Link */
