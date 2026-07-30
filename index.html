@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a1a2e" />
+    <meta name="description" content="Thiệp mời tham dự lễ tốt nghiệp của Trần Kim Ngân - K47 Khoa Quốc Tế" />
+    <title>Thiệp mời tốt nghiệp | Trần Kim Ngân</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Decorative grain overlay -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Background music -->
+    <audio id="bgMusic" loop preload="auto">
+      <source src="assets/nhacrucro.MP3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Floating music toggle -->
+    <button class="music-toggle" id="musicToggle" aria-label="Bật/tắt nhạc">
+      <div class="music-vinyl" aria-hidden="true">
+        <div class="vinyl-groove"></div>
+        <div class="vinyl-center"></div>
+      </div>
+      <svg class="music-icon-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18V5l12-2v13" />
+        <circle cx="6" cy="18" r="3" />
+        <circle cx="18" cy="16" r="3" />
+      </svg>
+      <div class="music-bars" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="music-pulse" aria-hidden="true"></div>
+    </button>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <main id="top">
+      <!-- ===== SECTION 1: Hero ===== -->
+      <section class="hero" aria-labelledby="hero-title">
+        <!-- Sash with swaying animation -->
+        <div class="sash-wrap" aria-hidden="true">
+          <img class="sash" src="assets/graduation-sash.png" alt="" />
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-badge reveal">
+            <img class="badge-logo" src="assets/Logo_ULaw.png" alt="ULaw Logo" />
+            <span class="badge-sub">K47 · KHOA QUỐC TẾ</span>
+          </div>
+
+          <h1 id="hero-title" class="hero-title reveal">
+            <span class="title-main">GRADUATION</span>
+            <span class="title-sub-script">Ceremony</span>
+          </h1>
+
+          <div class="hero-photo-card reveal-scale">
+            <img src="assets/photos/grad-01.jpg" alt="Trần Kim Ngân trong trang phục tốt nghiệp" />
+            <div class="photo-signature">
+              <span class="name-script">Kim Ngân</span>
+            </div>
+          </div>
+
+          <p class="hero-tagline reveal">
+            EVERY END IS A NEW BEGINNING
+          </p>
+        </div>
+        <!-- Decorative floating particles -->
+        <div class="particles" aria-hidden="true">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+
+      </section>
+
+      <!-- ===== SECTION 2: Invitation ===== -->
+      <section class="invitation" id="invitation" aria-labelledby="invite-title">
+        <div class="invitation-paper">
+          <div class="paper-corner top-left" aria-hidden="true"></div>
+          <div class="paper-corner top-right" aria-hidden="true"></div>
+
+          <p class="invite-label reveal">THÂN MỜI</p>
+
+          <h2 id="invite-title" class="invite-name reveal">
+            <span class="name-script">My Friends</span>
+          </h2>
+
+          <div class="invite-divider reveal" aria-hidden="true">
+            <span></span><i>✦</i><span></span>
+          </div>
+
+          <div class="invite-datetime reveal">
+            <p class="invite-time">14:00, CHỦ NHẬT</p>
+            <div class="invite-date-box">
+              <span class="date-month">THÁNG 08</span>
+              <span class="date-day">08</span>
+              <span class="date-year">NĂM 2026</span>
+            </div>
+          </div>
+
+          <div class="invite-venue reveal">
+            <p class="venue-label">Tại địa điểm:</p>
+            <h3 class="venue-name">NHÀ HÁT HÒA BÌNH</h3>
+            <p class="venue-address">TP. Hồ Chí Minh</p>
+          </div>
+
+          <a class="map-link reveal" href="https://maps.google.com/?q=Ho+Chi+Minh" target="_blank" rel="noreferrer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span>XEM CHỈ ĐƯỜNG</span>
+          </a>
+        </div>
+
+      </section>
+
+      <!-- ===== SECTION 3: Photo Gallery – Film Strip ===== -->
+      <section class="film-section" aria-labelledby="film-title">
+
+        <div class="film-header">
+          <h2 id="film-title" class="film-title reveal">
+            <span class="title-script">Tốt nghiệp</span>
+          </h2>
+          <p class="film-desc reveal">Khép lại hành trình 4 năm với biết bao kỷ niệm đáng nhớ. <br/>Cảm ơn những nỗ lực hết mình cho một thanh xuân trọn vẹn.</p>
+        </div>
+
+        <div class="film-marquee-container">
+          <div class="film-strip-horizontal">
+            <div class="film-marquee-track">
+              <!-- Set 1 -->
+              <div class="film-frame"><img src="assets/photos/grad-02.jpg" alt="Kỷ niệm tốt nghiệp 1" /></div>
+              <div class="film-frame"><img src="assets/photos/grad-03.jpg" alt="Kỷ niệm tốt nghiệp 2" /></div>
+              <div class="film-frame"><img src="assets/photos/grad-05.jpg" alt="Kỷ niệm tốt nghiệp 3" /></div>
+              <div class="film-frame"><img src="assets/photos/grad-06.jpg" alt="Kỷ niệm tốt nghiệp 4" /></div>
+              <div class="film-frame"><img src="assets/photos/grad-08.jpg" alt="Kỷ niệm tốt nghiệp 5" /></div>
+              
+              <!-- Set 2 (Duplicate for infinite scroll) -->
+              <div class="film-frame"><img src="assets/photos/grad-02.jpg" alt="Kỷ niệm tốt nghiệp 1" /></div>
+              <div class="film-frame"><img src="assets/photos/grad-03.jpg" alt="Kỷ niệm tốt nghiệp 2" /></div>
+              <div class="film-frame"><img src="assets/photos/grad-05.jpg" alt="Kỷ niệm tốt nghiệp 3" /></div>
+              <div class="film-frame"><img src="assets/photos/grad-06.jpg" alt="Kỷ niệm tốt nghiệp 4" /></div>
+              <div class="film-frame"><img src="assets/photos/grad-08.jpg" alt="Kỷ niệm tốt nghiệp 5" /></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Torn paper effect -->
+        <div class="torn-paper-top" aria-hidden="true"></div>
+        <div class="torn-paper-bottom" aria-hidden="true"></div>
+      </section>
+
+
+
+
+      <!-- ===== SECTION 6: Closing ===== -->
+      <section class="closing-split" aria-label="Lời kết">
+        <div class="closing-left reveal">
+          <div class="closing-text-card">
+            <p class="closing-eyebrow">SEE YOU THERE</p>
+            <h2 class="closing-title">Xin cảm ơn</h2>
+            <p class="closing-desc">
+              Cảm ơn bạn đã luôn yêu thương,<br />đồng hành và chung vui cùng Kim Ngân.
+            </p>
+          </div>
+
+          <div class="closing-left-gallery">
+            <figure class="closing-card card-landscape reveal-scale">
+              <img src="assets/photos/grad-17.jpg" alt="Kim Ngân tốt nghiệp 1" />
+            </figure>
+            <div class="closing-pair-grid">
+              <figure class="closing-card card-portrait reveal-scale">
+                <img src="assets/photos/grad-01.jpg" alt="Kim Ngân tốt nghiệp 2" />
+              </figure>
+              <figure class="closing-card card-portrait reveal-scale">
+                <img src="assets/photos/grad-26.jpg" alt="Kim Ngân tốt nghiệp 3" />
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="closing-right">
+          <div class="closing-gallery-grid">
+            <figure class="closing-card card-portrait reveal-scale">
+              <img src="assets/photos/grad-20.jpg" alt="Kim Ngân tốt nghiệp 4" />
+            </figure>
+            <figure class="closing-card card-portrait reveal-scale">
+              <img src="assets/photos/grad-21.jpg" alt="Kim Ngân tốt nghiệp 5" />
+            </figure>
+            <figure class="closing-card card-landscape reveal-scale">
+              <img src="assets/photos/grad-09.jpg" alt="Kim Ngân tốt nghiệp 6" />
+            </figure>
+            <figure class="closing-card card-portrait reveal-scale">
+              <img src="assets/photos/grad-14.jpg" alt="Kim Ngân tốt nghiệp 7" />
+            </figure>
+            <figure class="closing-card card-portrait reveal-scale">
+              <img src="assets/photos/grad-11.jpg" alt="Kim Ngân tốt nghiệp 8" />
+            </figure>
+            <figure class="closing-card card-landscape reveal-scale">
+              <img src="assets/photos/grad-07.jpg" alt="Kim Ngân tốt nghiệp 9" />
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
