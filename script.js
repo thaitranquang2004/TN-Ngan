@@ -216,5 +216,47 @@
   // NOTE: Sash animation is pure CSS (sashSway keyframes).
   // No JS interference – the CSS animation runs continuously.
 
+  // ============================================================
+  // Image Lightbox (Modal)
+  // ============================================================
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImg');
+  const closeBtn = document.querySelector('.modal-close');
+
+  if (modal && modalImg && closeBtn) {
+    // Select all images we want to be clickable
+    const galleryImages = document.querySelectorAll('.hero-photo-card img, .film-frame img, .closing-card img, .invitation-photo img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        // Small timeout allows display: flex to apply before transitioning opacity
+        setTimeout(() => {
+          modal.classList.add('show');
+        }, 10);
+        modalImg.src = img.src;
+        document.body.style.overflow = 'hidden'; // prevent scrolling background
+      });
+    });
+
+    // Close modal function
+    const closeModal = () => {
+      modal.classList.remove('show');
+      setTimeout(() => {
+        modal.style.display = 'none';
+        modalImg.src = '';
+      }, 300); // match CSS transition duration
+      document.body.style.overflow = '';
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      // Close if clicked outside the image
+      if (e.target !== modalImg) {
+        closeModal();
+      }
+    });
+  }
+
   console.log('✨ Graduation Invitation loaded');
 })();

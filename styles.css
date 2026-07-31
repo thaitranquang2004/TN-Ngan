@@ -31,9 +31,20 @@ body {
   margin: 0;
   overflow-x: hidden;
   color: var(--ink);
-  background: var(--paper);
+  background: #e4e4e7;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Mobile Frame Wrapper */
+main {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--paper);
+  position: relative;
+  min-height: 100vh;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.12);
+  overflow-x: hidden;
 }
 
 img { display: block; max-width: 100%; }
@@ -254,6 +265,7 @@ img { display: block; max-width: 100%; }
   max-width: 160px;
   height: auto;
   margin-bottom: 4px;
+  margin-top: -20px;
 }
 .badge-sub {
   color: #1b243a;
@@ -271,7 +283,7 @@ img { display: block; max-width: 100%; }
 .title-main {
   display: block;
   font-family: var(--font-serif);
-  font-size: clamp(38px, 8.5vw, 68px);
+  font-size: clamp(25px, 6vw, 68px);
   font-weight: 400;
   letter-spacing: 0.14em;
   color: #1b243a;
@@ -280,10 +292,10 @@ img { display: block; max-width: 100%; }
 .title-sub-script {
   display: block;
   font-family: var(--font-script);
-  font-size: clamp(54px, 11.5vw, 92px);
+  font-size: clamp(30px, 11.5vw, 92px);
   font-weight: 400;
   color: #1b243a;
-  margin-top: -22px;
+  margin-top: -5px;
   margin-left: 20px;
 }
 
@@ -329,7 +341,7 @@ img { display: block; max-width: 100%; }
 }
 .photo-signature .name-script {
   font-family: var(--font-script);
-  font-size: clamp(46px, 10vw, 68px);
+  font-size: clamp(36px, 10vw, 68px);
   color: #ffffff;
   font-weight: 400;
   text-shadow:
@@ -1228,7 +1240,7 @@ img { display: block; max-width: 100%; }
 /* ============================================================
    RESPONSIVE – DESKTOP
    ============================================================ */
-@media (min-width: 768px) {
+@media (min-width: 9999px) {
   .hero-content {
     padding: 100px 48px 20px;
   }
@@ -1267,7 +1279,7 @@ img { display: block; max-width: 100%; }
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 9999px) {
   .invitation {
     padding: 120px 80px;
     gap: 64px;
@@ -1282,19 +1294,40 @@ img { display: block; max-width: 100%; }
 /* ============================================================
    RESPONSIVE – MOBILE FINE-TUNING
    ============================================================ */
-@media (max-width: 767px) {
+@media (max-width: 9999px) {
   .sash-wrap {
     width: clamp(50px, 24vw, 100px);
     left: 20px;
-    top: -200px;
+    top: -175px;
   }
   
   .hero-content {
-    padding-left: clamp(80px, 22vw, 140px);
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
   }
-  .hero-photo-card,
+  .hero-badge,
+  .hero-title {
+    padding-left: clamp(80px, 22vw, 140px);
+    padding-right: 20px;
+  }
+  .title-main {
+    font-size: clamp(25px, 6vw, 42px);
+    letter-spacing: 0.1em;
+    margin-left: 0px;
+  }
+  .title-sub-script {
+    font-size: clamp(30px, 8.5vw, 64px);
+    margin-top: -8px;
+    margin-left: 15px;
+  }
+  .hero-photo-card {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .hero-tagline {
-    margin-left: -70px;
+    margin-left: 0;
+    padding: 0 20px;
   }
 
   .invitation {
@@ -1395,6 +1428,12 @@ img { display: block; max-width: 100%; }
   }
 }
 
+@media (min-width: 480px) {
+  .music-toggle {
+    right: calc(50% - 240px + 28px);
+  }
+}
+
 /* ============================================================
    REDUCED MOTION
    ============================================================ */
@@ -1415,4 +1454,70 @@ img { display: block; max-width: 100%; }
     clip-path: none;
     transition: none;
   }
+}
+
+/* ============================================================
+   IMAGE MODAL (LIGHTBOX)
+   ============================================================ */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000; /* Ensure it's above everything */
+  padding: 40px 20px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 15, 25, 0.95);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow: hidden; /* Prevent body scroll */
+}
+
+.image-modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.image-modal .modal-content {
+  max-width: 95%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.image-modal.show .modal-content {
+  transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 2001;
+  transition: color 0.2s ease, transform 0.2s ease;
+  font-family: var(--font-sans);
+}
+
+.modal-close:hover {
+  color: var(--gold);
+  transform: scale(1.1);
+}
+
+/* Cursor indication for clickable images */
+.hero-photo-card img,
+.film-frame img,
+.closing-card img,
+.invitation-photo img {
+  cursor: zoom-in;
 }
