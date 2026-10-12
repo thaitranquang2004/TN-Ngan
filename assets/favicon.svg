@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <!-- Background Gradient: Deep Wine to Midnight Navy -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581624" />
+      <stop offset="50%" stop-color="#341320" />
+      <stop offset="100%" stop-color="#141426" />
+    </linearGradient>
+
+    <!-- Metallic Gold Borders and Elements -->
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faecc8" />
+      <stop offset="45%" stop-color="#d4af6d" />
+      <stop offset="75%" stop-color="#b08b47" />
+      <stop offset="100%" stop-color="#e8cf99" />
+    </linearGradient>
+
+    <!-- Cap Top Gradient -->
+    <linearGradient id="capTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff1d0" />
+      <stop offset="30%" stop-color="#e2bc7a" />
+      <stop offset="65%" stop-color="#c69d54" />
+      <stop offset="100%" stop-color="#9a7330" />
+    </linearGradient>
+
+    <!-- Cap Bottom/Shadow Gradient -->
+    <linearGradient id="capDarkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#af8740" />
+      <stop offset="100%" stop-color="#704e19" />
+    </linearGradient>
+
+    <!-- Tassel Gradient -->
+    <linearGradient id="tasselGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fff5dc" />
+      <stop offset="50%" stop-color="#deb776" />
+      <stop offset="100%" stop-color="#b68f49" />
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Base with Gold Rim -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="url(#goldBorder)" stroke-width="2.2" />
+
+  <!-- Subtle Inner Accent Ring -->
+  <rect x="5.5" y="5.5" width="53" height="53" rx="12.5" fill="none" stroke="url(#goldBorder)" stroke-width="0.8" stroke-opacity="0.4" />
+
+  <g filter="url(#glow)">
+    <!-- Skullcap Base (Bottom of Cap) -->
+    <path d="M 20.5 30.5 L 20.5 37.5 C 20.5 43.5 43.5 43.5 43.5 37.5 L 43.5 30.5 C 39.5 32.5 36 33.8 32 34.3 C 28 33.8 24.5 32.5 20.5 30.5 Z" fill="url(#capDarkGrad)" />
+
+    <!-- Skullcap Trim Highlight -->
+    <path d="M 20.5 37.5 C 20.5 43.5 43.5 43.5 43.5 37.5" fill="none" stroke="url(#tasselGrad)" stroke-width="1.3" stroke-linecap="round" />
+
+    <!-- Cap Diamond Top (Mortarboard Rhombus) -->
+    <polygon points="32,15.5 53,25 32,34.5 11,25" fill="url(#capTopGrad)" />
+
+    <!-- Cap Diamond Facet Shading (Subtle 3D look) -->
+    <polygon points="32,15.5 53,25 32,34.5" fill="#ffffff" fill-opacity="0.16" />
+    <polygon points="11,25 32,34.5 32,15.5" fill="#000000" fill-opacity="0.08" />
+
+    <!-- Center Button -->
+    <ellipse cx="32" cy="25" rx="2.6" ry="1.7" fill="#fff8e7" stroke="#9a7330" stroke-width="0.5" />
+
+    <!-- Tassel Cord -->
+    <path d="M 32 25 C 22.5 24.5 14.5 28.5 15.5 38.5" fill="none" stroke="url(#tasselGrad)" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Tassel Ring -->
+    <circle cx="15.5" cy="39" r="1.8" fill="#fff5dc" />
+
+    <!-- Tassel Fringe/Brush -->
+    <path d="M 13.8 40.5 L 12.8 49.5 C 13.5 50.5 17.5 50.5 18.2 49.5 L 17.2 40.5 Z" fill="url(#capTopGrad)" />
+
+    <!-- Sparkle / Star 1 (Top Right) -->
+    <path d="M 47.5 13.5 Q 47.5 16.5 50.5 16.5 Q 47.5 16.5 47.5 19.5 Q 47.5 16.5 44.5 16.5 Q 47.5 16.5 47.5 13.5 Z" fill="#fff5dc" opacity="0.9" />
+
+    <!-- Sparkle / Star 2 (Bottom Left) -->
+    <path d="M 13.5 49 Q 13.5 51 15.5 51 Q 13.5 51 13.5 53 Q 13.5 51 11.5 51 Q 13.5 51 13.5 49 Z" fill="#fff5dc" opacity="0.75" />
+  </g>
+</svg>
